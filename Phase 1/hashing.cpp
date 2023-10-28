@@ -22,16 +22,37 @@ int main(){
     // return 0;
 
 
-    //-------------------hashing for string--------------------------------
+    //-------------------hashing for lowercase string--------------------------------
 
 
-    string s = "abjsfdlaa";
+    // string s = "abjsfdlaa";
+
+    // //precompute
+    // int  hashh[26] = {0};
+
+    // for(int i=0;i<s.size();i++){
+    //     hashh[s[i]-'a']++;
+    // }   
+
+    // // fetch
+
+    // char key;
+    // cout<<"Enter which character you want to search : "<<endl;
+    // cin>>key;
+
+    // cout<< key <<" has occured " << hashh[key-'a'] << " times "<<endl;
+
+
+    //-------------------hashing for any string--------------------------------
+
+
+    string s = "AaaBBbCcDEeeeeFFFfgH";
 
     //precompute
-    int  hashh[26] = {0};
+    int hashh[256] = {0};
 
-    for(int i=0;i<s.size();i++){
-        hashh[s[i]-'a']++;
+    for(size_t i=0;i<s.size();i++){
+        hashh[s[i]]++;
     }   
 
     // fetch
@@ -40,7 +61,7 @@ int main(){
     cout<<"Enter which character you want to search : "<<endl;
     cin>>key;
 
-    cout<< key <<" has occured " << hashh[key-'a'] << " times "<<endl;
+    cout<< key <<" has occured " << hashh[key] << " times "<<endl;
 
 
 }
