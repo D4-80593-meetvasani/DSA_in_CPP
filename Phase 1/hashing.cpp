@@ -1,10 +1,12 @@
 #include<iostream>
+#include<map>
+#include<unordered_map>
 using namespace std;
 
 int main(){
 
 
-    //---------------------hashing for arrays----------------------------
+    // ---------------------hashing for arrays----------------------------
     // int arr[10] = {0,1,1,2,2,2,3,4,4,5};
 
     // //precompute
@@ -46,22 +48,68 @@ int main(){
     //-------------------hashing for any string--------------------------------
 
 
-    string s = "AaaBBbCcDEeeeeFFFfgH";
+    // string s = "AaaBBbCcDEeeeeFFFfgH";
+
+    // //precompute
+    // int hashh[256] = {0};
+
+    // for(size_t i=0;i<s.size();i++){
+    //     hashh[s[i]]++;
+    // }   
+
+    // // fetch
+
+    // char key;
+    // cout<<"Enter which character you want to search : "<<endl;
+    // cin>>key;
+
+    // cout<< key <<" has occured " << hashh[key] << " times "<<endl;
+
+
+    // ---------------------hashing for arrays using STL----------------------------
+
+    // int arr[10] = {0,1,1,2,2,2,3,4,4,5};
+
+    // //precompute
+    // map<int,int> mpp;
+
+    // for(int i=0;i<10;i++){
+    //     mpp[arr[i]] += 1;
+    // }
+
+    // //fetch:
+    // int key;
+    // cout<<"Enter number you want to search : "<<endl;
+    // cin>>key;
+    // cout<< key << " has appeared " << mpp[key] <<" times in array ! " <<endl;
+    // return 0;
+
+
+    // ---------------------hashing for arrays using STL----------------------------
+
+    int arr[10] = {0,1,1,2,2,2,3,4,4,5};
 
     //precompute
-    int hashh[256] = {0};
+    unordered_map<int,int> mpp;
 
-    for(size_t i=0;i<s.size();i++){
-        hashh[s[i]]++;
-    }   
+    for(int i=0;i<10;i++){
+        mpp[arr[i]] += 1;
+    }
 
-    // fetch
-
-    char key;
-    cout<<"Enter which character you want to search : "<<endl;
+    //fetch:
+    int key;
+    cout<<"Enter number you want to search : "<<endl;
     cin>>key;
+    cout<< key << " has appeared " << mpp[key] <<" times in array ! " <<endl;
+    return 0;
 
-    cout<< key <<" has occured " << hashh[key] << " times "<<endl;
+    //?    Map => stores in sorted order
+    //?    T.C. => Worst/Average/Best -> O(logN)
+
+
+    //-----------------------------------------
+    //?    Unordered Map => stores in any order
+    //?    T.C. => Worst -> O(N)   || Average/Best -> O(1)
 
 
 }
